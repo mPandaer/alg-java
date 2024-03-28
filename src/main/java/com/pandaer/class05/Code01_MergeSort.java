@@ -1,4 +1,4 @@
-package com.pandaer.class04;
+package com.pandaer.class05;
 
 /**
  * 归并排序

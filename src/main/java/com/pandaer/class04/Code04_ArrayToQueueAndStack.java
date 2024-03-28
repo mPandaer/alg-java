@@ -1,4 +1,4 @@
-package com.pandaer.class03;
+package com.pandaer.class04;
 
 /**
  * 利用数组实现队列和栈

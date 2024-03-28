@@ -1,6 +1,6 @@
-package com.pandaer.class01;
+package com.pandaer.class02;
 
-import com.pandaer.class01.utils.ArrUtils;
+import com.pandaer.class02.utils.ArrUtils;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -8,55 +8,53 @@ import java.util.Arrays;
 import java.util.Objects;
 
 /**
- * 插入排序
+ * 冒泡排序
  * 额外空间复制度: O(1)
- * 时间复杂度: O(N^2) 最好可以做到 O(N)
+ * 时间复杂度: O(N^2)
  * 算法思想:
- * 假设数据是增长的,而不是一开始就存在了,在每个增长的时刻,维护局部有序,当数据不在增长了,就全局有序了
- * 当前轮的比较,依赖了上一轮的结果即 基于当前数组有序,给新进来的数组找一个合适位置
+ * 每轮比较中选出一个最大的放在最后,只是这个选择的方式不一样,不是直接选最大最小,而是两两比较
  */
-public class Code03_InsertSort {
+public class Code02_BubbleSort {
 
     /**
-     * 插入排序
+     * 冒泡排序
      * @param arr 待排序的数组
      */
-    public void insertSort(int[] arr) {
+    public void bubbleSort(int[] arr) {
         if (Objects.isNull(arr) || arr.length < 2) {
             return;
         }
-
-        // 0 ~ 0 已经有序
-        // 0 ~ 1
-        // 0 ~ 2
-        // 0 ~ 3
-        // 0 ~ 4
-        // 0 ~ 5
         // 0 ~ n-1
-        for (int i = 1; i< arr.length;i++) {
-            for (int j = i; j > 0; j--) {
-                if (arr[j] >= arr[j-1]) {
-                    break;
+        // 0 ~ n-2
+        // 0 ~ n-3
+        // 0 ~ n-4
+        // ...
+        // 0 ~ 1
+        for (int i = arr.length - 1; i > 0; i--) {
+            for (int j = 0; j < i;j++) {
+                if (arr[j] > arr[j+1]) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = tmp;
                 }
-                int tmp = arr[j];
-                arr[j] = arr[j-1];
-                arr[j-1] = tmp;
             }
         }
+
     }
 
+
     @Nested
-    class InsertSortTester {
+    class BubbleSortTester {
         @Test
         public void test() {
-            int testTimes = 100000;
+            int testTimes = 1000000;
             int arrMaxLen = 100;
             int arrMaxNum = 100;
             for (int i = 0; i<testTimes;i++) {
                 int[] arr = ArrUtils.genRandomArray(arrMaxLen,arrMaxNum);
                 int[] sorted1 = Arrays.copyOf(arr, arr.length);
                 int[] sorted2 = Arrays.copyOf(arr, arr.length);
-                insertSort(sorted1);
+                bubbleSort(sorted1);
                 valid(sorted2);
                 if (!Arrays.equals(sorted1,sorted2)) {
                     System.out.println("原数组: " + Arrays.toString(arr));
@@ -73,6 +71,4 @@ public class Code03_InsertSort {
             Arrays.sort(arr);
         }
     }
-
-
 }

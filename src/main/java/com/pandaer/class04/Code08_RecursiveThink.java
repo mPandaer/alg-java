@@ -1,4 +1,4 @@
-package com.pandaer.class03;
+package com.pandaer.class04;
 
 /**
  * 递归思想 -- 一个大问题能够拆分出同等结构的小问题, 大 小 指的是数据规模的问题

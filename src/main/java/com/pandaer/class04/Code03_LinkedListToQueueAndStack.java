@@ -1,8 +1,6 @@
-package com.pandaer.class03;
+package com.pandaer.class04;
 
-import com.pandaer.class03.base.ListNode;
-
-import java.util.List;
+import com.pandaer.class04.base.ListNode;
 
 /**
  * 利用链表实现栈和队列

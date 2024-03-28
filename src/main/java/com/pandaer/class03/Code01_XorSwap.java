@@ -1,13 +1,11 @@
-package com.pandaer.class02;
+package com.pandaer.class03;
 
-import com.pandaer.class02.utils.ArrUtils;
+import com.pandaer.class03.utils.ArrUtils;
 import org.apache.commons.math3.random.RandomDataGenerator;
-import org.apache.commons.math3.util.MathUtils;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.Set;
 
 /**
  * 利用异或完成交换动作

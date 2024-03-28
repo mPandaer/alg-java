@@ -1,4 +1,4 @@
-package com.pandaer.class02;
+package com.pandaer.class03;
 
 import org.apache.commons.math3.random.RandomDataGenerator;
 import org.junit.jupiter.api.Nested;

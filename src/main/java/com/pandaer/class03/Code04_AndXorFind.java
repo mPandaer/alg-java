@@ -1,11 +1,10 @@
-package com.pandaer.class02;
+package com.pandaer.class03;
 
 import org.apache.commons.math3.random.RandomDataGenerator;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * 有一堆数据,其中有且只有两个数出现奇数次,其他的数都是出现偶数次,返回这两个数

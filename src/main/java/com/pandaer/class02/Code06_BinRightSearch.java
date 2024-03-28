@@ -1,4 +1,4 @@
-package com.pandaer.class01;
+package com.pandaer.class02;
 
 
 import org.junit.jupiter.api.Nested;

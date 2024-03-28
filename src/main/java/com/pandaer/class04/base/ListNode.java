@@ -1,4 +1,4 @@
-package com.pandaer.class03.base;
+package com.pandaer.class04.base;
 
 /**
  * 链表的节点

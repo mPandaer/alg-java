@@ -1,61 +1,58 @@
-package com.pandaer.class01;
+package com.pandaer.class02;
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
- * 经典二分查找问题
+ * 二分查找 最左>=target的数的下标
  * 额外空间复制度: O(1)
  * 时间复杂度: O(LogN)
  * 算法思想:
- * 在一个有序的数组,利用排他性,每次排除一半的数据
+ * 在有序数组中, 通过二分,一直分到底,找到>=target的最左边的数
  */
-public class Code04_BinExist {
+public class Code05_BinLeftSearch {
 
     /**
-     * 利用二分法 判断数组中是否存在target
-     * @param arr 查找数组
-     * @param target
-     * @return -1表示不存在 否则返回该数在数组中的索引
+     * 二分查找 >=target最左边的数
+     * @param arr 有序的数组
+     * @param target 要找>=target的target
+     * @return 最左数的下标 没有找到返回-1
      */
-    public int binExist(int[] arr,int target) {
+    public int binLeftSearch(int[] arr,int target) {
         if (Objects.isNull(arr) || arr.length == 0) {
             return -1;
         }
         int left = 0;
         int right = arr.length - 1;
-
+        int resIndex = -1;
         while (left <= right) {
             int mid = left + ((right-left) >> 1);
-            if (arr[mid] == target) {
-                return mid;
-            }else if(arr[mid] < target) {
-                left = mid + 1;
+            if (arr[mid] >= target) {
+                resIndex = mid;
+                right = mid - 1;
             }else {
-                right = mid -1;
+                left = mid + 1;
             }
         }
-        return -1;
+        return resIndex;
     }
 
     @Nested
-    class BinExistTester {
+    class BinLeftSearchTester {
 
         @Test
         public void test() {
-            int testTimes = 1000000;
-            int arrMaxLen = 5;
+            int testTimes = 100_0000;
+            int arrMaxLen = 100;
             int arrMaxNum = 100;
             for (int i = 0; i<testTimes;i++) {
                 int target = (int)(Math.random() * arrMaxNum) - (int)(Math.random() * arrMaxNum);
                 int[] arr = randomArray(arrMaxLen,arrMaxNum,target);
 
-                int res1 = binExist(arr, target);
+                int res1 = binLeftSearch(arr, target);
                 int res2 = valid(arr, target);
 
                 if (!Objects.equals(res1,res2)) {
@@ -69,8 +66,12 @@ public class Code04_BinExist {
         }
 
         public int valid(int[] arr,int target) {
-            List<Integer> list = Arrays.stream(arr).boxed().collect(Collectors.toList());
-            return list.indexOf(target);
+            for (int i =0; i< arr.length;i++) {
+                if (arr[i] >= target) {
+                    return i;
+                }
+            }
+            return -1;
         }
 
         public int[] randomArray(int maxLen,int maxNum,int target) {

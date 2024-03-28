@@ -1,6 +1,5 @@
-package com.pandaer.class02;
+package com.pandaer.class03;
 
-import com.pandaer.class02.utils.ArrUtils;
 import org.apache.commons.math3.random.RandomDataGenerator;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;

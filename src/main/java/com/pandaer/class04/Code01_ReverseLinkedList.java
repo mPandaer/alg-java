@@ -1,6 +1,6 @@
-package com.pandaer.class03;
+package com.pandaer.class04;
 
-import com.pandaer.class03.base.ListNode;
+import com.pandaer.class04.base.ListNode;
 
 /**
  * 反转链表

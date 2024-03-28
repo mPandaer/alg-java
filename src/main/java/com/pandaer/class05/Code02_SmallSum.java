@@ -1,6 +1,6 @@
-package com.pandaer.class04;
+package com.pandaer.class05;
 
-import com.pandaer.class01.utils.ArrUtils;
+import com.pandaer.class02.utils.ArrUtils;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
