@@ -1,4 +1,4 @@
-package com.pandaer.code06;
+package com.pandaer.class06;
 
 import com.pandaer.class02.utils.ArrUtils;
 import org.junit.jupiter.api.Nested;
@@ -151,8 +151,9 @@ public class Code03_QuickSort {
             int[] arr = {93, 51};
 //            partition(arr,0,arr.length-1);
 //            System.out.println(Arrays.toString(arr));
-            quickSort02(arr);
-            System.out.println(Arrays.toString(arr));
+//            quickSort02(arr);
+//            System.out.println(Arrays.toString(arr));
+            System.out.println(-1 / 2);
 
         }
 

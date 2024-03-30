@@ -1,9 +1,8 @@
-package com.pandaer.code06;
+package com.pandaer.class06;
 
 import com.pandaer.class02.utils.ArrUtils;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.io.TempDir;
 
 import java.util.Arrays;
 import java.util.List;

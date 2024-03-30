@@ -1,8 +1,6 @@
-package com.pandaer.code06;
+package com.pandaer.class06;
 
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
 
 /**
  * 子数组求和问题
